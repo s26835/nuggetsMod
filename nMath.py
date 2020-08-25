@@ -34,7 +34,7 @@ def centDiv(cents):
     numCents = int(cents)
     
     if numCents >= 100:
-        print("This function only works with values less than 1.00!")
+        raise ValueError('centDiv() expected cents to be < 100; got %s' % (cents))
     else:
         #calculates quarters
         quarters = str(numCents // 25)

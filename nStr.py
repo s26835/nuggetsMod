@@ -1,6 +1,6 @@
 #/usr/bin/env python
 
-'String manipulation'
+'Helpful string functions and variables'
 
 from random import randint, choice
 

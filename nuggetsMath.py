@@ -2,17 +2,18 @@
 
 'This module introduces a number of mathematical functions'
 
-from math import pi
-from math import randint
+#Sorry, this might recreate functions from the math module, I never went through the documentation
 
-logfile = open('logfile.txt','a+')
+from math import pi
+from random import randint
 
 def calcGrade(percentageGrade):
     'Takes a percentage grade and converts it to letter; returns result'
     
     #percentageGrade defines grade to be converted
     
-    percent = float(percentageGrade); grade = None
+    percent = float(percentageGrade)
+    grade = None
     
     if percent < 60:
         grade = 'F'
@@ -52,8 +53,8 @@ def centDiv(cents):
         remainder = 0 #for consistency
         
         print(quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, and " + pennies + " pennies.")
-
         
+#These are from excersises learning Python        
 def rectArea(length, width):
     area = length * width
     print(area)
@@ -94,24 +95,3 @@ def minutesToHours(minutes):
     minutes %= 60
     if hours > 1:
         return '{} hours, {} minutes'.format(hours, minutes)
-
-def factorial(num):
-    "Returns the factorial of a number"
-    factorial = num
-    for i in range(1, num):
-        num *= i
-    return num
-
-'''def Sdeviation(dataType, *nums):
-    'returns standard deviation of nums; seperate values in nums list with commas. As dataType, write p for a population and s for a sample'
-    nums = list(nums)
-    vals = 0;
-    dataType = str(dataType).lower()
-    n = len(nums)
-    if dataType == 's': n += 1
-    if dataType != 's' and dataType != 'p':
-        print("Must enter p (population) or s (sample) for dataType!")
-    else:
-        for i in nums: vals += i
-        S = math.sqrt(vals**2/n)
-        return S'''

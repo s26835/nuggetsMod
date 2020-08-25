@@ -67,7 +67,7 @@ def circleArea(radius):
     area = math.pi * (radius**2)
     return(area)
 
-def divisible(dividend, divisor):
+def isdivisible(dividend, divisor, /): #get rid of / parameter if your Python version is earlier than 3.8
     'finds if dividend is divisible by divisor'
     if dividend % divisor == 0:
         return(True)
@@ -89,9 +89,9 @@ def hoursToMinutes(hours, minutes=0):
     minutes += hours*60
     return minutes
 
-def minutesToHours(minutes):
+def minToHours(minutes):
     'converts minutes to hours and minutes'
-    hours = minutes // 60
+    hours = int(minutes // 60)
     minutes %= 60
-    if hours > 1:
-        return '{} hours, {} minutes'.format(hours, minutes)
+    if hours > 0:
+        return '{} hours, {} minutes'.format(hours, int(minutes))

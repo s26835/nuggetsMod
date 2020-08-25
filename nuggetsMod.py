@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
 'this module introduces a number of micellanous functions'
+#That is, it's sort of my playground
 
 from math import pi
 from os import linesep
 from time import sleep
 
-import nuggetsRE as nRE
+import nRE
 
+#The following SSB code is just for fun; will probably be moved
 class Attack(object):
     'Creates a Super Smash Bros. attack; meant to be used for fighters\nFor Final Smash, set attackType (attackName.type) to "Final Smash" (case sensitive)'
     

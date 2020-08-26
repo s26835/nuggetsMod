@@ -55,14 +55,6 @@ def centDiv(cents):
         print(quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, and " + pennies + " pennies.")
         
 #These are from excersises learning Python        
-def rectArea(length, width):
-    area = length * width
-    return(area)
-
-def rectPrism(length, width, height):
-    area = length * width * height
-    return(area)
-
 def circleArea(radius):
     area = math.pi * (radius**2)
     return(area)
@@ -76,12 +68,12 @@ def isdivisible(dividend, divisor, /): #get rid of / parameter if your Python ve
 
 def f2c(farenheit):
     'converts farenheit to celsius'
-    celsius = (farenheit - 32)*(5/9)
+    celsius = (farenheit - 32) * (5/9)
     return celsius
     
 def c2f(celsius):
     'converts celsius to farenheit'
-    farenheit = (celsius / (5/9))+32
+    farenheit = (celsius / (5/9)) + 32
     return farenheit
 
 def hoursToMinutes(hours, minutes=0):

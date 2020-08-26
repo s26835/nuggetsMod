@@ -74,12 +74,12 @@ def isdivisible(dividend, divisor, /): #get rid of / parameter if your Python ve
     else:
         return(False)
 
-def F2C(farenheit):
+def f2c(farenheit):
     'converts farenheit to celsius'
     celsius = (farenheit - 32)*(5/9)
     return celsius
     
-def C2F(celsius):
+def c2f(celsius):
     'converts celsius to farenheit'
     farenheit = (celsius / (5/9))+32
     return farenheit

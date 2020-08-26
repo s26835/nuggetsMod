@@ -57,7 +57,7 @@ def centDiv(cents):
 #These are from excersises learning Python        
 def rectArea(length, width):
     area = length * width
-    print(area)
+    return(area)
 
 def rectPrism(length, width, height):
     area = length * width * height

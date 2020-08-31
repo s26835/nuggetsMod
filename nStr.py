@@ -14,9 +14,13 @@ keychars = alphanums + specials
 whitespace = ' \n\r\t\f\v'
 asciis = ''.join([chr(char) for char in range(256)])
 
-def join(iterable, /):
-    "Equivalent to ''.join(iterable); concatenates any number of strings"
-    return ''.join(iterable)
+def split(string, char='', /):
+    "Equivalent to list(string) if char == '';\nElse string.split(char)"
+    return list(string) if char == '' else string.split(char)
+
+def join(iterable, joiner='', /):
+    "Equivalent to joiner.join(iterable); concatenates any number of iterables\nMeant for strings"
+    return joiner.join(iterable)
 
 def strGen(lines=1, maxchars=79, charset=keychars):
     'Generates a random string'

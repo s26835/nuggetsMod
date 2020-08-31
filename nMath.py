@@ -76,14 +76,6 @@ def c2f(celsius):
     farenheit = (celsius / (5/9)) + 32
     return farenheit
 
-def hoursToMin(hours, minutes=0):
-    'converts hours (and optionally minutes) to minutes'
-    minutes += hours*60
-    return minutes
-
-def minToHours(minutes):
+'''def minToHours(minutes):
     'converts minutes to hours and minutes'
-    hours = int(minutes // 60)
-    minutes %= 60
-    if hours > 0:
-        return '{} hours, {} minutes'.format(hours, int(minutes))
+    return dict(('hours', 'minutes'), divmod(minutes, 60))'''

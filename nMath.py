@@ -83,12 +83,15 @@ def c2f(celsius):
 
 #Statistical functions
 
+def qdict(*data):
+    return dict(zip(['q1', 'q2', 'q3'], stat.quantiles(data)))
+
 def iqr(*data):
     "Interquartile range"
     
     if len(data) == 1 and isinstance(data[0], (list, tuple)):
         data = data[0]
-    q = stat.quartiles(data)
+    q = stat.quantiles(data)
     return q[2] - q[0]
 
 #This function is currently being prototyped
@@ -107,7 +110,8 @@ def _iavg(*data):
     if len(data) == 1 and isinstance(data[0], (list, tuple)):
         data = data[0]
     
-    target = 1.5 * iqr(data)
+    target = 1.5 * iqr(*data)
     outliers = False
+    qs = qdict(*data)
     for item in data:
-        if 
+        if item < 

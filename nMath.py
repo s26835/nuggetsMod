@@ -2,9 +2,9 @@
 
 'This module introduces a number of mathematical functions'
 
-#Sorry, this might recreate functions from the math module, I never went through the documentation
-
+import numbers as _num
 import statistics as stat
+import fraction
 from math import pi
 from random import randint
 
@@ -95,10 +95,12 @@ def iqr(*data):
     return q[2] - q[0]
 
 #This function is currently being prototyped
-def _iavg(*data):
+def _iavg(*data: _num.Number) -> float:
     """
     Intuitive AVeraGe
     Returns the best average for the data set
+    Use fraction.Fraction instances for ratios
+    Ignores mode; nobody likes it
     
     >>> iavg(3, 4, 5)
     4
@@ -111,7 +113,11 @@ def _iavg(*data):
         data = data[0]
     
     target = 1.5 * iqr(*data)
-    outliers = False
-    qs = qdict(*data)
+    q = qdict(*data)
     for item in data:
-        if item < 
+        if item < q['q1'] - target or item > q['q3'] + target:
+            return stat.median(data)
+        elif isinstance(item, fraction.Fraction):
+            return stat.harmonic_mean(data)
+    else:
+        return stat.fmean(data)

@@ -4,6 +4,7 @@
 
 #Sorry, this might recreate functions from the math module, I never went through the documentation
 
+import statistics as stat
 from math import pi
 from random import randint
 
@@ -79,3 +80,34 @@ def c2f(celsius):
 '''def minToHours(minutes):
     'converts minutes to hours and minutes'
     return dict(('hours', 'minutes'), divmod(minutes, 60))'''
+
+#Statistical functions
+
+def iqr(*data):
+    "Interquartile range"
+    
+    if len(data) == 1 and isinstance(data[0], (list, tuple)):
+        data = data[0]
+    q = stat.quartiles(data)
+    return q[2] - q[0]
+
+#This function is currently being prototyped
+def _iavg(*data):
+    """
+    Intuitive AVeraGe
+    Returns the best average for the data set
+    
+    >>> iavg(3, 4, 5)
+    4
+    >>> from fractions import Fraction as F
+    >>> iavg(F(60, 20), F(200, 50), F(5, 1))
+    Fraction(180, 47)
+    """
+    
+    if len(data) == 1 and isinstance(data[0], (list, tuple)):
+        data = data[0]
+    
+    target = 1.5 * iqr(data)
+    outliers = False
+    for item in data:
+        if 
